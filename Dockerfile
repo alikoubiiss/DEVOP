@@ -10,7 +10,7 @@ RUN sed -i "s|http://localhost:1337|${API_URL}|" src/environments/environment.pr
  && npx ng build --configuration production
 
 # --- Etapa 2: servir con nginx ---
-FROM nginx:1.29-alpine
+FROM nginx:1.31-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist/backoffice/browser /usr/share/nginx/html
 EXPOSE 80
