@@ -4,10 +4,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        # URL de la API tal como la ve el navegador (sobrescribir en producción)
         API_URL: http://localhost:1337
     image: backoffice:latest
     container_name: backoffice
     ports:
-      - "4200:80"   # accede en http://localhost:4200
+      - "4200:80"
     restart: unless-stopped
